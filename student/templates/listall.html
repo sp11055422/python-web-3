@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20523顯示所有資料</title>
+</head>
+<body style="background-color: lightblue;">
+    <h2>顯示 student 資料表所有資料</h2>
+    <table border="1" cellpadding="0" cellspacing="0">  
+    <th>編號</th><th>姓名</th><th>生日</th><th>地址</th><th>電話</th><th>電子郵件</th><th>操作</th>
+    {% for person in students %}
+    <tr>
+        <td>編號:{{person.id}}</td>
+        <td>姓名:{{person.cName}}</td>
+        <td>生日:{{person.cBirthday}}</td>
+        <td>地址:{{person.cAddr}}</td>
+        <td>電話:{{person.cPhone}}</td>
+        <td>電子郵件:{{person.cEmail}}</td>
+        <td><a href="/delete/{{person.id}}/" onclick="return confirm('確定刪除？')">刪除</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <h3>若要新增學生資料請造訪http://xxx.x.x.x:xxxx/insert</h3>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>顯示單一資料</title>
+</head>
+<body style="background-color: lightblue;">
+    <h2>20523查詢李佩玲的資料</h2>
+    {% if oneperson %}
+    <table border="1" cellpadding="0" cellspacing="0">  
+    <th>編號</th><th>姓名</th><th>性別</th><th>生日</th><th>地址</th><th>電話</th><th>電子郵件</th>
+    <tr>
+        <td>編號:{{oneperson.id}}</td>
+        <td>姓名:{{oneperson.cName}}</td>
+        <td>性別:{{oneperson.cSex}}</td>
+        <td>生日:{{oneperson.cBirthday}}</td>
+        <td>地址:{{oneperson.cAddr}}</td>
+        <td>電話:{{oneperson.cPhone}}</td>
+        <td>電子郵件:{{oneperson.cEmail}}</td>
+    </tr>
+    </table>
+    {% else %}
+    <p>{{error}}</p>
+    {% endif %}
+</body>
+</html>
